@@ -14,7 +14,7 @@
  * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
  */
 // Row 1
-#define FR_AT   NON_US_HASH   // @
+//#define FR_AT   NON_US_HASH   // @
 #define FR_AMPR N1    // &
 #define FR_LEAC N2    // é
 #define FR_DQUO N3    // "
@@ -80,7 +80,7 @@
  * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
  */
 // Row 1
-//#define FR_AT   GRAVE    // @
+#define FR_AT   GRAVE    // @
 #define FR_AMPS N1    // &
 #define FR_LEAC N2    // é
 #define FR_DQUO N3    // "
