@@ -39,7 +39,7 @@
 #define FR_O    O    // O
 #define FR_P    P    // P
 #define FR_CIRC LEFT_BRACKET // ^
-#define FR_DLLR  RIGHT_BRACKET // $
+#define FR_DLLR RIGHT_BRACKET // $
 // Row 3
 #define FR_Q    A    // Q
 #define FR_S    S    // S
@@ -54,7 +54,7 @@
 #define FR_LUGR SINGLE_QUOTE // ù
 #define FR_GRV  BACKSLASH // `
 // Row 4
-#define FR_LABK NON_US_BACKSLASH // <
+#define FR_LABK GRAVE // <
 #define FR_W    Z    // W
 #define FR_X    X    // X
 #define FR_C    C    // C
