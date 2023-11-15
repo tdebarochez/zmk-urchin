@@ -137,9 +137,9 @@
 // |  %        |  ^  |  [   |  ]   |  ~       |   |  &   |  =  |  <  |  >  |  ?   |
 //                          | SHFT | SPC/GUI  |   |      | DEL |
                         bindings = <
-   &lt ADJUST FR_EXLM  &kp FR_AT    &kp FR_LBRC  &kp FR_RBRC  &kp FR_PIPE      &kp FR_DIAE   &kp FR_ACUT    &kp FR_CIRC  &kp FR_GRV   &kp FR_COLN  
-   &kp FR_HASH         &kp FR_DLLR  &kp FR_LPAR  &kp FR_RPAR  &kp FR_GRV       &kp RET       &kp LEFT       &kp DOWN     &kp UP       &kp RIGHT          
-   &kp FR_PRCNT        &kp FR_CIRC  &kp FR_LBKT  &kp FR_RBKT  &kp FR_TILD      &kp FR_AMPS   &kp FR_EQUAL   &kp FR_LABK  &kp FR_RABK  &kp FR_QUES  
+   &lt ADJUST FR_EXLM  &kp AT       &kp FR_LBRC  &kp FR_RBRC  &kp FR_PIPE      &kp FR_DIAE   &kp FR_ACUT    &kp FR_CIRC  &kp FR_GRV   &kp FR_COLN  
+   &kp HASH            &kp FR_DLLR  &kp FR_LPAR  &kp FR_RPAR  &kp FR_GRV       &kp RET       &kp LEFT       &kp DOWN     &kp UP       &kp RIGHT          
+   &kp FR_PRCNT        &kp FR_CIRC  &kp FR_LBKT  &kp FR_RBKT  &kp FR_TILD      &kp FR_AMPS   &kp FR_EQUAL   &kp LABK     &kp BABK     &kp FR_QUES  
                                                  &kp LSHFT    &hm LGUI SPACE   &none         &kp DEL
                         >;
                 };
