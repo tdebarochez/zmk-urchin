@@ -80,7 +80,7 @@
  * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
  */
 // Row 1
-#define FR_AT   GRAVE    // @
+#define FR_AT   NON_US_BACKSLASH    // @
 #define FR_AMPS N1    // &
 #define FR_LEAC N2    // é
 #define FR_DQUO N3    // "
@@ -94,7 +94,7 @@
 #define FR_RPAR MINUS // )
 #define FR_MINS EQUAL  // -
 
-#define FR_HASH LS(FR_AT) // #
+#define FR_HASH LS(NON_US_BACKSLASH) // #
 #define FR_1    LS(FR_AMPR) // 1
 #define FR_2    LS(FR_LEAC) // 2
 #define FR_3    LS(FR_DQUO) // 3
