@@ -30,6 +30,91 @@
                         bindings = <&kp>, <&kp>;
                 };
         };
+
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+                        label = "default";
+
+// -----------------------------------------------------------------------------------------------
+// | Q       |  W       |  F      |  P    |  G      |   | J   |  L   |  U    |  Y     |  ;       |
+// | A       |  R       |  S      |  T    |  D      |   | H   |  N   |  E    |  I     |  O       |
+// | SHFT/Z  |  CTRL/X  |  ALT/C  |  V    |  B      |   | N   |  M   | ALT/, | CTRL/. |  SHFT//  |
+//                                | RAISE | SPC/GUI |   | LWR | BKSP |
+                        bindings = <
+   &kp FR_Q        &kp FR_W        &kp FR_F      &kp FR_P   &kp FR_G         &kp FR_J    &kp FR_L    &kp FR_U         &kp FR_Y         &kp FR_SCLN  
+   &kp FR_A        &kp FR_R        &kp FR_S      &kp FR_T   &kp FR_D         &kp FR_H    &kp FR_N    &kp FR_E         &kp FR_I         &kp FR_O           
+   &hm LSHFT FR_Z  &hm LCTRL FR_X  &hm LALT FR_C &kp FR_V   &kp FR_B         &kp FR_K    &kp FR_M    &hm RALT FR_COMM &hm RCTRL FR_DOT &hm RSHFT FR_SLSH  
+                                                 &mo RAISE  &hm LGUI SPACE   &mo LOWER   &mo NUM
+                        >;
+
+                };
+                lower_layer {
+                        label = "lower";
+
+// --------------------------------------------------------------------------------
+// |  ADJUST/! |  @  |  {   |  }   |  |       |   |  ¨   |  ´  |  ^  |  `  |  :   |
+// |  #        |  $  |  (   |  )   |  `       |   |  ENT | LFT | DWN |  UP |  RGT |
+// |  %        |  ^  |  [   |  ]   |  ~       |   |  &   |  =  |  <  |  >  |  ?   |
+//                          | SHFT | SPC/GUI  |   |      | DEL |
+                        bindings = <
+   &lt ADJUST FR_EXLM  &kp FR_AT    &kp FR_LBRC  &kp FR_RBRC  &kp FR_PIPE      &kp FR_DIAE   &kp FR_ACUT    &kp FR_CIRC  &kp FR_GRV   &kp FR_COLN  
+   &kp FR_HASH         &kp FR_DLLR  &kp FR_LPAR  &kp FR_RPAR  &kp FR_GRV       &kp RET       &kp LEFT       &kp DOWN     &kp UP       &kp RIGHT          
+   &kp FR_PRCNT        &kp FR_CIRC  &kp FR_LBKT  &kp FR_RBKT  &kp FR_TILD      &kp FR_AMPS   &kp FR_EQUAL   &kp FR_LABK  &kp FR_RABK  &kp FR_QUES  
+                                                 &kp LSHFT    &hm LGUI SPACE   &none         &kp DEL
+                        >;
+                };
+                
+                raise_layer {
+                        label = "raise";
+
+// --------------------------------------------------------------------------------------
+// | ESC   |  é     |  "    |  '    |  (      |   |  §      |  è   |  !   |  ç   |  à   |
+// |       | Prev   | Play  | Next  | VolUp   |   | PG_UP   | LFT  | DWN  |  UP  | RGT  |
+// | SHFT  |        |       | Mute  | VolDn   |   | PG_DN   |      |      |      |      |
+//                          |       | SPC/GUI |   | LWR/TAB | DEL  |
+                        bindings = <
+   &kp ESC     &kp FR_LEAC     &kp FR_DQUO       &kp FR_QUOT  &kp FR_LPAR        &kp FR_SECT    &kp FR_LEGR    &kp FR_EXLM  &kp FR_LCCE  &kp FR_LAGR 
+   &none       &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT   &kp C_VOLUME_UP    &kp PG_UP      &kp LEFT       &kp DOWN     &kp UP       &kp RIGHT   
+   &kp LSHFT   &none           &none             &kp C_MUTE   &kp C_VOLUME_DOWN  &kp PG_DN      &none          &none        &none        &none 
+                                                 &none        &hm LGUI SPACE     &lt LOWER TAB  &kp DEL
+                        >;
+                };
+
+                adjust_layer {
+                        label = "adjust";
+
+// ---------------------------------------------------------------------------------------------
+// |         | F2      | F3      | F4      | F5      |   | F6 | F7  | F8     | F9     | F10    | 
+// |         | F1      |         |         |         |   |    |     |        | F12    | F11    | 
+// |         |         |         |         |         |   |    |     | BT_PRV | BT_NXT | BT_CLR | 
+//                               | SHFT    | SPC/GUI |   |    | DEL |
+                        bindings = <
+   &none   &kp F2  &kp F3     &kp F4     &kp F5          &kp F6  &kp F7  &kp F8       &kp F9      &kp F10     
+   &none   &kp F1  &none      &none      &none           &none   &none   &none        &kp F12     &kp F11   
+   &none   &none   &none      &none      &none           &none   &none   &bt BT_PRV   &bt BT_NXT  &bt BT_CLR  
+                              &kp LSHFT  &hm LGUI SPACE  &none   &kp DEL
+                        >;
+                };
+
+                num_layer {
+                        label = "num";
+
+// -------------------------------------------------------------------------
+// | Arc | Slack          | Mail | iTerm |  VScode |   |  -      | 7 | 8 | 9 | BSPC |
+// | 👻  | Screen Capture |      |       |         |   |  +      | 4 | 5 | 6 | *    |
+// |     |                |      |       |         |   |  0      | 1 | 2 | 3 | /    |
+//                               | SHFT  | SPC/GUI |   | LWR/TAB |   |
+                        bindings = <
+   &focus_arc    &focus_slack     &focus_mail &focus_term &focus_vscode   &kp FR_MINUS   &kp FR_7  &kp FR_8  &kp FR_9  &kp BSPC     
+   &show_emojis  &screen_capture  &none       &none       &none           &kp FR_PLUS    &kp FR_4  &kp FR_5  &kp FR_6  &kp FR_ASTR  
+   &none         &none            &none       &none       &none           &kp FR_0       &kp FR_1  &kp FR_2  &kp FR_3  &kp FR_SLSH  
+                                              &kp LSHFT   &hm LGUI SPACE  &lt LOWER TAB  &none
+                        >;
+                };
+        };
+
         combos {
                 compatible = "zmk,combos";
                 combo_esc {
@@ -2341,6 +2426,7 @@
 
                 // CHORDING COMBOS END
         };
+
         macros {
                 // CHORDING MACROS START
                 m_the: m_the {
@@ -4707,90 +4793,6 @@
                                 , <&macro_tap &kp FR_4>
                                 , <&macro_release &kp LSHFT &kp LCTRL &kp LGUI>
                                 ;
-                };
-        };
-
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-                        label = "default";
-
-// -----------------------------------------------------------------------------------------------
-// | Q       |  W       |  F      |  P    |  G      |   | J   |  L   |  U    |  Y     |  ;       |
-// | A       |  R       |  S      |  T    |  D      |   | H   |  N   |  E    |  I     |  O       |
-// | SHFT/Z  |  CTRL/X  |  ALT/C  |  V    |  B      |   | N   |  M   | ALT/, | CTRL/. |  SHFT//  |
-//                                | RAISE | SPC/GUI |   | LWR | BKSP |
-                        bindings = <
-   &kp FR_Q        &kp FR_W        &kp FR_F      &kp FR_P   &kp FR_G         &kp FR_J    &kp FR_L    &kp FR_U         &kp FR_Y         &kp FR_SCLN  
-   &kp FR_A        &kp FR_R        &kp FR_S      &kp FR_T   &kp FR_D         &kp FR_H    &kp FR_N    &kp FR_E         &kp FR_I         &kp FR_O           
-   &hm LSHFT FR_Z  &hm LCTRL FR_X  &hm LALT FR_C &kp FR_V   &kp FR_B         &kp FR_K    &kp FR_M    &hm RALT FR_COMM &hm RCTRL FR_DOT &hm RSHFT FR_SLSH  
-                                                 &mo RAISE  &hm LGUI SPACE   &mo LOWER   &mo NUM
-                        >;
-
-                };
-                lower_layer {
-                        label = "lower";
-
-// --------------------------------------------------------------------------------
-// |  ADJUST/! |  @  |  {   |  }   |  |       |   |  ¨   |  ´  |  ^  |  `  |  :   |
-// |  #        |  $  |  (   |  )   |  `       |   |  ENT | LFT | DWN |  UP |  RGT |
-// |  %        |  ^  |  [   |  ]   |  ~       |   |  &   |  =  |  <  |  >  |  ?   |
-//                          | SHFT | SPC/GUI  |   |      | DEL |
-                        bindings = <
-   &lt ADJUST FR_EXLM  &kp FR_AT    &kp FR_LBRC  &kp FR_RBRC  &kp FR_PIPE      &kp FR_DIAE   &kp FR_ACUT    &kp FR_CIRC  &kp FR_GRV   &kp FR_COLN  
-   &kp FR_HASH         &kp FR_DLLR  &kp FR_LPAR  &kp FR_RPAR  &kp FR_GRV       &kp RET       &kp LEFT       &kp DOWN     &kp UP       &kp RIGHT          
-   &kp FR_PRCNT        &kp FR_CIRC  &kp FR_LBKT  &kp FR_RBKT  &kp FR_TILD      &kp FR_AMPS   &kp FR_EQUAL   &kp FR_LABK  &kp FR_RABK  &kp FR_QUES  
-                                                 &kp LSHFT    &hm LGUI SPACE   &none         &kp DEL
-                        >;
-                };
-                
-                raise_layer {
-                        label = "raise";
-
-// --------------------------------------------------------------------------------------
-// | ESC   |  é     |  "    |  '    |  (      |   |  §      |  è   |  !   |  ç   |  à   |
-// |       | Prev   | Play  | Next  | VolUp   |   | PG_UP   | LFT  | DWN  |  UP  | RGT  |
-// | SHFT  |        |       | Mute  | VolDn   |   | PG_DN   |      |      |      |      |
-//                          |       | SPC/GUI |   | LWR/TAB | DEL  |
-                        bindings = <
-   &kp ESC     &kp FR_LEAC     &kp FR_DQUO       &kp FR_QUOT  &kp FR_LPAR        &kp FR_SECT    &kp FR_LEGR    &kp FR_EXLM  &kp FR_LCCE  &kp FR_LAGR 
-   &none       &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT   &kp C_VOLUME_UP    &kp PG_UP      &kp LEFT       &kp DOWN     &kp UP       &kp RIGHT   
-   &kp LSHFT   &none           &none             &kp C_MUTE   &kp C_VOLUME_DOWN  &kp PG_DN      &none          &none        &none        &none 
-                                                 &none        &hm LGUI SPACE     &lt LOWER TAB  &kp DEL
-                        >;
-                };
-
-                adjust_layer {
-                        label = "adjust";
-
-// ---------------------------------------------------------------------------------------------
-// |         | F2      | F3      | F4      | F5      |   | F6 | F7  | F8     | F9     | F10    | 
-// |         | F1      |         |         |         |   |    |     |        | F12    | F11    | 
-// |         |         |         |         |         |   |    |     | BT_PRV | BT_NXT | BT_CLR | 
-//                               | SHFT    | SPC/GUI |   |    | DEL |
-                        bindings = <
-   &none   &kp F2  &kp F3     &kp F4     &kp F5          &kp F6  &kp F7  &kp F8       &kp F9      &kp F10     
-   &none   &kp F1  &none      &none      &none           &none   &none   &none        &kp F12     &kp F11   
-   &none   &none   &none      &none      &none           &none   &none   &bt BT_PRV   &bt BT_NXT  &bt BT_CLR  
-                              &kp LSHFT  &hm LGUI SPACE  &none   &kp DEL
-                        >;
-                };
-
-                num_layer {
-                        label = "num";
-
-// -------------------------------------------------------------------------
-// | Arc | Slack          | Mail | iTerm |  VScode |   |  -      | 7 | 8 | 9 | BSPC |
-// | 👻  | Screen Capture |      |       |         |   |  +      | 4 | 5 | 6 | *    |
-// |     |                |      |       |         |   |  0      | 1 | 2 | 3 | /    |
-//                               | SHFT  | SPC/GUI |   | LWR/TAB |   |
-                        bindings = <
-   &focus_arc    &focus_slack     &focus_mail &focus_term &focus_vscode   &kp FR_MINUS   &kp FR_7  &kp FR_8  &kp FR_9  &kp BSPC     
-   &show_emojis  &screen_capture  &none       &none       &none           &kp FR_PLUS    &kp FR_4  &kp FR_5  &kp FR_6  &kp FR_ASTR  
-   &none         &none            &none       &none       &none           &kp FR_0       &kp FR_1  &kp FR_2  &kp FR_3  &kp FR_SLSH  
-                                              &kp LSHFT   &hm LGUI SPACE  &lt LOWER TAB  &none
-                        >;
                 };
         };
 };
