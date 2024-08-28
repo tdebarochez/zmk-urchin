@@ -7,7 +7,7 @@ const readline = require('readline');
 function translateKeys(x) {
     switch (x) {
         case "'":
-            return 'SQT';
+            return 'FR_QUOT';
             break;
         case '`':
             return 'BSPC';
@@ -22,7 +22,7 @@ function translateKeys(x) {
             return 'AT';
             break;
         default:
-            return x;
+            return 'FR_' + x;
     }
 }
 
@@ -31,7 +31,7 @@ function mapBindings(x) {
         return `&sk LSHIFT &kp ${x.toUpperCase()}`
     }
 
-    return `&kp FR_${translateKeys(x).toUpperCase()}`
+    return `&kp ${translateKeys(x).toUpperCase()}`
 }
 
 (async function processLineByLine() {
@@ -59,7 +59,7 @@ function mapBindings(x) {
                 throw new Error(`Can't use combo '${keys}' for word '${word}' already used by ${used[index]}`)
             }
             used[index] = word;
-            const macro = 'm_' + word.split('').map(translateKeys).join('');
+            const macro = 'm_' + word.split('').join('');
             const inputs = keys.toUpperCase().split('').map(translateKeys);
             const bindings = word.split('').map(mapBindings).join(' ') + ' &kp SPACE';
             macros += `                ${macro}: ${macro} {
@@ -69,7 +69,7 @@ function mapBindings(x) {
                 };
 `
 
-            const positions = 'P_' + inputs.join(' P_');
+            const positions = inputs.join(' ');
             combos += `                combo_${macro} {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <P_COMBO ${positions}>;
