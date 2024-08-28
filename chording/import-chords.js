@@ -31,7 +31,7 @@ function mapBindings(x) {
         return `&sk LSHIFT &kp ${x.toUpperCase()}`
     }
 
-    return `&kp ${translateKeys(x).toUpperCase()}`
+    return `&kp FR_${translateKeys(x).toUpperCase()}`
 }
 
 (async function processLineByLine() {
