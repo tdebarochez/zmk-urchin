@@ -49,12 +49,11 @@
         };
         macros {
                 m_the: m_the {
-                        label = "ZM_m_the";
                         compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
                         bindings = <&kp T &kp H &kp E &kp SPACE>;
                 };
                 focus_arc: focus_arc {
-                        label = "ZM_focus_arc";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
@@ -64,7 +63,6 @@
                                 ;
                 };
                 focus_slack: focus_slack {
-                        label = "ZM_focus_slack";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
@@ -74,7 +72,6 @@
                                 ;
                 };
                 focus_mail: focus_mail {
-                        label = "ZM_focus_mail";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
@@ -84,7 +81,6 @@
                                 ;
                 };
                 focus_term: focus_term {
-                        label = "ZM_focus_term";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
@@ -94,7 +90,6 @@
                                 ;
                 };
                 focus_vscode: focus_vscode {
-                        label = "ZM_focus_vscode";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
@@ -104,7 +99,6 @@
                                 ;
                 };
                 show_emojis: show_emojis {
-                        label = "ZM_show_emojis";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
@@ -114,7 +108,6 @@
                                 ;
                 };
                 screen_capture: screen_capture {
-                        label = "ZM_screen_capture";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
