@@ -16,7 +16,7 @@
 #define ADJUST  3
 #define NUM     4
 
-#define COMBO_TIMEOUT 200
+#define COMBO_TIMEOUT 50
 
 / {
         behaviors {
@@ -33,7 +33,7 @@
         combos {
                 compatible = "zmk,combos";
                 combo_esc {
-                        timeout-ms = <50>;
+                        timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <1 2>;
                         bindings = <&kp TAB>;
                 };
