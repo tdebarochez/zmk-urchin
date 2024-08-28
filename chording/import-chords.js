@@ -73,7 +73,7 @@ function mapBindings(x) {
                 };
 `
 
-            const positions = inputs.join(' ');
+            const positions = 'P_' + inputs.join(' P_');
             combos += `                combo_${macro} {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <P_COMBO ${positions}>;
