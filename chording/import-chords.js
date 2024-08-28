@@ -26,6 +26,10 @@ function translateKeys(x) {
     }
 }
 
+function stripInvalidChars(x) {
+    return x.replace(/\W/g, '')
+}
+
 function mapBindings(x) {
     if (x.match(/[A-Z]/)) {
         return `&sk LSHIFT &kp ${x.toUpperCase()}`
@@ -59,7 +63,7 @@ function mapBindings(x) {
                 throw new Error(`Can't use combo '${keys}' for word '${word}' already used by ${used[index]}`)
             }
             used[index] = word;
-            const macro = 'm_' + word.split('').join('');
+            const macro = 'm_' + word.split('').map(stripInvalidChars).join('');
             const inputs = keys.toUpperCase().split('').map(translateKeys);
             const bindings = word.split('').map(mapBindings).join(' ') + ' &kp SPACE';
             macros += `                ${macro}: ${macro} {

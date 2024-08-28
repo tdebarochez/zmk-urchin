@@ -1113,10 +1113,10 @@
                         key-positions = <P_COMBO FR_R FR_U>;
                         bindings = <&m_run>;
                 };
-                combo_m_don't {
+                combo_m_dont {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <P_COMBO FR_D FR_O FR_N>;
-                        bindings = <&m_don't>;
+                        bindings = <&m_dont>;
                 };
                 combo_m_while {
                         timeout-ms = <COMBO_TIMEOUT>;
@@ -3418,7 +3418,7 @@
                         #binding-cells = <0>;
                         bindings = <&kp FR_R &kp FR_U &kp FR_N &kp SPACE>;
                 };
-                m_don't: m_don't {
+                m_dont: m_dont {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&kp FR_D &kp FR_O &kp FR_N &kp FR_QUOT &kp FR_T &kp SPACE>;
