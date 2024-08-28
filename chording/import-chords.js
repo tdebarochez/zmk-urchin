@@ -64,7 +64,7 @@ function mapBindings(x) {
             }
             used[index] = word;
             const macro = 'm_' + word.split('').map(stripInvalidChars).join('');
-            const inputs = keys.toUpperCase().split('').map(translateKeys);
+            const inputs = keys.toUpperCase().split('');
             const bindings = word.split('').map(mapBindings).join(' ') + ' &kp SPACE';
             macros += `                ${macro}: ${macro} {
                         compatible = "zmk,behavior-macro";
