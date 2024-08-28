@@ -15,6 +15,12 @@
 #define ADJUST  3
 #define NUM     4
 
+#define COMBO_TIMEOUT 200
+#define MACRO_TAP 10
+#define MACRO_WAIT 0
+
+#define P_T     13
+#define P_COMBO 31 32
 
 / {
         behaviors {
@@ -35,8 +41,18 @@
                         key-positions = <1 2>;
                         bindings = <&kp TAB>;
                 };
+                combo_m_the {
+                        timeout-ms = <COMBO_TIMEOUT>;
+                        key-positions = <P_COMBO P_T>;
+                        bindings = <&m_the>;
+                };
         };
         macros {
+                m_the: m_the {
+                        label = "ZM_m_the";
+                        compatible = "zmk,behavior-macro";
+                        bindings = <&kp T &kp H &kp E &kp SPACE>;
+                };
                 focus_arc: focus_arc {
                         label = "ZM_focus_arc";
                         compatible = "zmk,behavior-macro";
