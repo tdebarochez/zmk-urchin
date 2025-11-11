@@ -358,8 +358,11 @@ path.combo {
 <rect rx="6.0" ry="6.0" x="200.0" y="1112.959200876839" width="52.0" height="52.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="256.0" y="1119.959200876839" width="52.0" height="52.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="480.0" y="1119.959200876839" width="52.0" height="52.0" class="key"/>
+<text x="505.0" y="1145.959200876839" class="tap">F15</text>
 <rect rx="6.0" ry="6.0" x="536.0" y="1112.959200876839" width="52.0" height="52.0" class="key"/>
+<text x="560.0" y="1138.959200876839" class="tap">F14</text>
 <rect rx="6.0" ry="6.0" x="592.0" y="1105.959200876839" width="52.0" height="52.0" class="key"/>
+<text x="619.0" y="1130.959200876839" class="tap">F13</text>
 <rect rx="6.0" ry="6.0" x="648.0" y="1112.959200876839" width="52.0" height="52.0" class="key"/>
 <text x="674.0" y="1138.959200876839" class="tap">F12</text>
 <rect rx="6.0" ry="6.0" x="704.0" y="1126.959200876839" width="52.0" height="52.0" class="key"/>
