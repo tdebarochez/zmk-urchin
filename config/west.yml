@@ -6,10 +6,19 @@ manifest:
       # bravekarma
     - name: caksoylar
       url-base: https://github.com/caksoylar
+      # zmk-poor-mans-led-indicator
+    - name: eyesonly
+      url-base: https://github.com/eyesonly
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main
+    - name: zmk-poor-mans-led-indicator
+      remote: eyesonly
+      revision: main
   self:
     path: config
