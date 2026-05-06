@@ -15,8 +15,8 @@
 include:
     # Dongle builds
   - board: xiao_ble//zmk
-    shield: urchin_dongle
-    artifact-name: xiao_dongle_minimal
+    shield: urchin_dongle rgbled_adapter
+    artifact-name: xiao_dongle_rgbled
   - board: nice_nano@2.0.0//zmk
     shield: urchin_dongle poor_mans_led
     snippet: studio-rpc-usb-uart
