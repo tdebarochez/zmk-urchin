@@ -28,7 +28,7 @@ include:
     # Split halves (peripherals when paired with dongle)
   - board: nice_nano@2.0.0//zmk
     shield: urchin_left
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_SPLIT_BLE_PERIPHERAL_ID=0
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: urchin_left_peripheral
   - board: nice_nano@2.0.0//zmk
     shield: urchin_left
@@ -37,7 +37,7 @@ include:
     artifact-name: urchin_left_central
   - board: nice_nano@2.0.0//zmk
     shield: urchin_right
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_SPLIT_BLE_PERIPHERAL_ID=1
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: urchin_right
 
     # Reset shields
